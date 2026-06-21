@@ -1,8 +1,8 @@
-\# Digital Wallet Application
+# Digital Wallet Application
 
 
 
-The Modular E-Wallet \& Payment Gateway System is a Spring Boot-based application that enables secure digital payments, including wallet creation, fund transfers, and payment processing. It uses Kafka for event-driven communication and MySQL for data storage, ensuring scalability and reliability.
+The Modular E-Wallet & Payment Gateway System is a Spring Boot-based application that enables secure digital payments, including wallet creation, fund transfers, and payment processing. It uses Kafka for event-driven communication and MySQL for data storage, ensuring scalability and reliability.
 
 
 
@@ -10,7 +10,7 @@ The system follows a modular microservices-style architecture where each service
 
 
 
-\---
+---
 
 
 
