@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Transaction Successful</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f7ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    width:450px;
+}
+
+.success-icon{
+    font-size:60px;
+    color:green;
+}
+
+h2{
+    color:green;
+}
+
+.txn-id{
+    font-weight:bold;
+    color:#1652f0;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    background:#1652f0;
+    color:white;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.btn:hover{
+    background:#0f46d8;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="success-icon">✔</div>
+
+    <h2>Transaction Successful!</h2>
+
+    <p>Your payment has been processed successfully.</p>
+
+    <p>
+        Transaction ID:
+        <span class="txn-id" th:text="${txnId}"></span>
+    </p>
+
+    <a th:href="@{/home}" class="btn">
+        Back to Home
+    </a>
+
+</div>
+
+</body>
+</html>

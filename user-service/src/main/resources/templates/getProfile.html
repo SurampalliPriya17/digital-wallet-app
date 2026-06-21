@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>User Profile</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:700px;
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+.header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.header h1{
+    color:#334155;
+}
+
+.profile-card{
+    border:1px solid #e5e7eb;
+    border-radius:15px;
+    padding:25px;
+}
+
+.row{
+    display:flex;
+    justify-content:space-between;
+    padding:15px 0;
+    border-bottom:1px solid #e5e7eb;
+}
+
+.row:last-child{
+    border-bottom:none;
+}
+
+.label{
+    font-weight:600;
+    color:#475569;
+}
+
+.value{
+    color:#1e293b;
+}
+
+.balance{
+    margin-top:25px;
+    text-align:center;
+    background:#eff6ff;
+    padding:20px;
+    border-radius:12px;
+}
+
+.balance h2{
+    color:#2563eb;
+}
+
+.back{
+    text-align:center;
+    margin-top:25px;
+}
+
+.back a{
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>User Profile</h1>
+    </div>
+
+    <div class="profile-card">
+
+        <div class="row">
+            <span class="label">Name</span>
+            <span class="value"
+                  th:text="${user.userDetail.name}">
+                Name
+            </span>
+        </div>
+
+        <div class="row">
+            <span class="label">Email</span>
+            <span class="value"
+                  th:text="${user.userDetail.email}">
+                Email
+            </span>
+        </div>
+
+        <div class="row">
+            <span class="label">Phone</span>
+            <span class="value"
+                  th:text="${user.userDetail.phone}">
+                Phone
+            </span>
+        </div>
+
+        <div class="row">
+            <span class="label">KYC Number</span>
+            <span class="value"
+                  th:text="${user.userDetail.kycNumber}">
+                KYC
+            </span>
+        </div>
+
+    </div>
+
+    <div class="balance">
+        <h3>Wallet Balance</h3>
+        <h2>
+            ₹ <span th:text="${user.walletBalance}">
+                0.0
+            </span>
+        </h2>
+    </div>
+
+    <div class="back">
+        <a th:href="@{/home}">
+            Back to Dashboard
+        </a>
+    </div>
+
+</div>
+
+</body>
+</html>

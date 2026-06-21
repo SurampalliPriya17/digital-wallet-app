@@ -1,0 +1,23 @@
+server:
+  port: 9091
+logging:
+  level:
+    ROOT: DEBUG
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: wallet-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/wallet-service/**
+
+        - id: user-service
+          uri: http://localhost:8080
+          predicates:
+            - Path=/user-service/**
+
+        - id: transaction-service
+          uri: http://localhost:8083
+          predicates:
+            - Path=/transaction-service/**

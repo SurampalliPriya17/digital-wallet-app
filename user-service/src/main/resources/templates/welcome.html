@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>FintechWallet</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:800px;
+    background:white;
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.container::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:8px;
+    height:100%;
+    background:linear-gradient(to bottom,#8b5cf6,#2563eb);
+}
+
+.container::after{
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:8px;
+    height:100%;
+    background:linear-gradient(to bottom,#8b5cf6,#2563eb);
+}
+
+.logo{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+h1{
+    color:#334155;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#64748b;
+    margin-bottom:40px;
+}
+
+.options{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+.card{
+    width:250px;
+    padding:30px;
+    border:1px solid #e5e7eb;
+    border-radius:15px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card h2{
+    color:#334155;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#64748b;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#2563eb;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.btn:hover{
+    background:#1d4ed8;
+}
+
+.footer{
+    margin-top:40px;
+    color:#94a3b8;
+    font-size:14px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="logo">💳</div>
+
+    <h1>Welcome to FintechWallet</h1>
+
+    <p class="subtitle">
+        Securely manage your wallet, add money, and transfer funds instantly.
+    </p>
+
+    <div class="options">
+
+        <div class="card">
+            <h2>New User</h2>
+            <p>Create a wallet account and get started.</p>
+            <a th:href="@{/register}" class="btn">
+                Register
+            </a>
+        </div>
+
+        <div class="card">
+            <h2>Existing User</h2>
+            <p>Access your wallet using your email.</p>
+            <a th:href="@{/login}" class="btn">
+                Login
+            </a>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        FintechWallet © 2026
+    </div>
+
+</div>
+
+</body>
+</html>

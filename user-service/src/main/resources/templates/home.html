@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>FintechWallet Dashboard</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:#f4f6fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.container{
+    width:900px;
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.08);
+    position:relative;
+    overflow:hidden;
+}
+
+.container::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:8px;
+    height:100%;
+    background:linear-gradient(to bottom,#8b5cf6,#2563eb);
+}
+
+.container::after{
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:8px;
+    height:100%;
+    background:linear-gradient(to bottom,#8b5cf6,#2563eb);
+}
+
+.header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.logo{
+    font-size:45px;
+}
+
+.header h1{
+    color:#334155;
+    margin-top:10px;
+}
+
+.header p{
+    color:#64748b;
+    margin-top:5px;
+}
+
+.user-info{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.user-info h2{
+    color:#334155;
+    margin-bottom:20px;
+}
+
+.balance-card{
+    background:linear-gradient(135deg,#2563eb,#8b5cf6);
+    color:white;
+    padding:25px;
+    border-radius:15px;
+    width:380px;
+    margin:auto;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+.balance-card p{
+    font-size:14px;
+    opacity:0.9;
+}
+
+.balance-card h1{
+    margin-top:10px;
+    font-size:34px;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+    max-width:700px;
+    margin:0 auto;
+}
+
+.card{
+    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:15px;
+    padding:30px;
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    color:#334155;
+    margin-bottom:12px;
+    font-size:22px;
+}
+
+.card p{
+    color:#64748b;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    background:#1d4ed8;
+    color:white;
+    padding:10px 22px;
+    border-radius:8px;
+    font-weight:600;
+}
+
+.btn:hover{
+    background:#1e40af;
+}
+
+.card:last-child{
+    grid-column:1 / span 2;
+    justify-self:center;
+    width:340px;
+}
+
+.logout{
+    margin-top:35px;
+    text-align:center;
+}
+
+.logout a{
+    color:#dc2626;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:18px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <div class="logo">💳</div>
+        <h1>FintechWallet</h1>
+        <p>Secure your financial future in minutes.</p>
+    </div>
+
+    <div class="user-info">
+        <h2>Welcome, <span th:text="${name}">Priya</span> 👋</h2>
+
+        <div class="balance-card">
+            <p>Available Balance</p>
+            <h1>₹ <span th:text="${balance}">0.00</span></h1>
+        </div>
+    </div>
+
+    <div class="menu-grid">
+
+        <div class="card">
+            <h3>Get Profile</h3>
+            <p>View user profile information.</p>
+            <a th:href="@{/profile}" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h3>Update User</h3>
+            <p>Modify account details.</p>
+            <a th:href="@{/update}" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h3>Add Money</h3>
+            <p>Deposit money into wallet.</p>
+            <a th:href="@{/addMoney}" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h3>Send Money</h3>
+            <p>Transfer money to another user.</p>
+            <a th:href="@{/sendMoney}" class="btn">Open</a>
+        </div>
+
+        <div class="card">
+            <h3>Delete User</h3>
+            <p>Delete your wallet account.</p>
+            <a th:href="@{/delete}" class="btn">Open</a>
+        </div>
+
+    </div>
+
+    <div class="logout">
+        <a th:href="@{/logout}">Logout</a>
+    </div>
+
+</div>
+
+</body>
+</html>
